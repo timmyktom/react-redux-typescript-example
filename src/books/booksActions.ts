@@ -1,18 +1,14 @@
 import { Book } from './bookModel';
+import { booksApi } from './booksApi';
 
-export const GET_BOOKS = 'GET_BOOKS';
+
 export const GET_BOOKS_SUCCESS = 'GET_BOOKS_SUCCESS';
 export const GET_BOOKS_ERROR = 'GET_BOOKS_ERROR';
 export const GET_BOOK_DETAILS = 'GET_BOOK_DETAILS';
 
-export type GET_BOOKS = typeof GET_BOOKS;
 export type GET_BOOKS_SUCCESS = typeof GET_BOOKS_SUCCESS;
 export type GET_BOOKS_ERROR = typeof GET_BOOKS_ERROR;
 export type GET_BOOK_DETAILS = typeof GET_BOOK_DETAILS;
-
-export interface GetBooks {
-    type: GET_BOOKS;
-}
 
 export interface GetBooksSuccess {
     type: GET_BOOKS_SUCCESS;
@@ -29,10 +25,16 @@ export interface GetBookDetails {
     id: number;
 }
 
-export type BooksAction = GetBooks | GetBooksSuccess | GetBooksError | GetBookDetails;
+export type BooksAction = GetBooksSuccess | GetBooksError | GetBookDetails;
 
-export function getBooks(): GetBooks {
-    return { type: GET_BOOKS};
+export function getBooks() {
+    return function (dispatcher: any) {
+        return booksApi.getBooks().then(books => {
+            dispatcher(getBooksSuccess(books));
+        }).catch(error => {
+            dispatcher(getBooksError(error));
+        });
+    }
 }
   
 export function getBooksSuccess(books: Book[]): GetBooksSuccess {

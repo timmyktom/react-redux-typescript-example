@@ -13,8 +13,8 @@ import configureStore from './store/configureStore';
 import { getBooks } from './books/booksActions';
 import { getCars } from './cars/carsActions';
 import HomePage from './home/HomePage';
-import BooksPage from './books/BooksPage';
-import CarsPage from './cars/CarsPage';
+import BooksContainer from './books/BooksContainer';
+import CarsContainer from './cars/CarsContainer';
 
 import './App.css';
 const logo = require('./logo.svg');
@@ -61,8 +61,8 @@ class App extends React.Component {
             <Switch>
               <Redirect exact from="/" to="/home"/>
               <Route path="/home" component={HomePage} />
-              <Route path="/books" component={BooksPage} />
-              <Route path="/cars" component={CarsPage} />
+              <Route path="/books" component={BooksContainer} />
+              <Route path="/cars" component={CarsContainer} />
             </Switch>
           </Router>
         </Provider>
