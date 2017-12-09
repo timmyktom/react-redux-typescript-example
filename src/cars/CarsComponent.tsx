@@ -7,6 +7,7 @@ import { Car } from './carModel';
 export interface Props {
   cars: Car[];
   carDetails: Car;
+  //tslint:disable
   onCarSelected: (event: any) => any;
 }
 
@@ -15,14 +16,11 @@ function CarsComponent(props: Props) {
 
   const onCarSelect = function (carModel: string) {
     onCarSelected(carModel);
-  }
+  };
   return (
     <div>
-      <CarsList
-        carsList={cars}
-        onCarSelect={onCarSelect} />
-      <CarDetails
-        data={carDetails} />
+      <CarsList carsList={cars} onCarSelect={onCarSelect} />
+      <CarDetails data={carDetails} />
     </div>
   );
 }

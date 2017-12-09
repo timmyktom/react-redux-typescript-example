@@ -5,6 +5,7 @@ import { Car } from './carModel';
 class CarsApi {
 
     getCars(): Promise<Car[]> {
+        //tslint:disable
         return new Promise(function (resolve, reject) {
             ajax({
                 type: "GET",
@@ -19,4 +20,3 @@ class CarsApi {
 }
 
 export const carsApi = new CarsApi();
-

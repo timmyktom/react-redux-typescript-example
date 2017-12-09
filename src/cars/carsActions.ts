@@ -27,6 +27,7 @@ export interface GetCarDetails {
 export type CarsAction = GetCarsSuccess | GetCarsError | GetCarDetails;
 
 export function getCars() {
+    //tslint:disable
     return function (dispatcher: any) {
         return carsApi.getCars().then(books => {
             dispatcher(getCarsSuccess(books));

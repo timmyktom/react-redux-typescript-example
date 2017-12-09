@@ -7,6 +7,7 @@ import { Book } from './bookModel';
 export interface Props {
   books: Book[];
   bookDetails: Book;
+  //tslint:disable
   onBookSelected: (event: any) => any;
 }
 
@@ -16,14 +17,11 @@ function BooksComponent(props: Props) {
     const onBookSelect = function(bookId: number)
     {
         onBookSelected(bookId);
-    }
+    };
     return (
         <div>
-            <BooksList 
-                booksList={books}
-                onBookSelect={onBookSelect}/>
-            <BookDetails 
-                data={bookDetails}/>
+            <BooksList booksList={books} onBookSelect={onBookSelect}/>
+            <BookDetails data={bookDetails}/>
         </div>
     );
 }

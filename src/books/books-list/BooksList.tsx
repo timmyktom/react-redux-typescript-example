@@ -5,12 +5,14 @@ import './BooksList.css';
 
 export interface BookListProps {
   booksList: Book[];
+  //tslint:disable
   onBookSelect: (event: any) => any;
 }
 
 function BooksList(props: BookListProps) {
   const { booksList, onBookSelect} = props;
 
+  //tslint:disable
   const handleBookChange = (e:any) => {
     onBookSelect(Number(e.target.value));
   };

@@ -2,6 +2,7 @@ import { connect, Dispatch } from 'react-redux';
 import * as fromCarAction from './carsActions';
 import CarsComponent from './CarsComponent';
 
+//tslint:disable
 function mapStateToProps(state: any) {
     return {
         cars: state.carsReducer.carList,

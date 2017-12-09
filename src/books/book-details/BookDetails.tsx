@@ -6,7 +6,6 @@ export interface BookDetailsProps {
   data: Book;
 }
 
-
 function BookDetails(props: BookDetailsProps) {
   const { data } = props;
 
@@ -17,12 +16,12 @@ function BookDetails(props: BookDetailsProps) {
         <h3>Selected Book details</h3>
         <div className="row">
           <div className="col-xs-12 col-sm-6 col-md-3">
-              <img src={process.env.PUBLIC_URL + '/assets/'+ data.image} />
+              <img src={process.env.PUBLIC_URL + '/assets/' + data.image} />
           </div>
             <div className="col-xs-12 col-sm-6 col-md-9">
               <div>
                 <label>Name : </label>
-                <span>{data.name }</span>
+                <span>{data.name}</span>
               </div>
               <div>
                 <label>Author : </label>

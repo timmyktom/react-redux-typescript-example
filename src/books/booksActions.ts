@@ -1,7 +1,6 @@
 import { Book } from './bookModel';
 import { booksApi } from './booksApi';
 
-
 export const GET_BOOKS_SUCCESS = 'GET_BOOKS_SUCCESS';
 export const GET_BOOKS_ERROR = 'GET_BOOKS_ERROR';
 export const GET_BOOK_DETAILS = 'GET_BOOK_DETAILS';
@@ -28,6 +27,7 @@ export interface GetBookDetails {
 export type BooksAction = GetBooksSuccess | GetBooksError | GetBookDetails;
 
 export function getBooks() {
+    //tslint:disable
     return function (dispatcher: any) {
         return booksApi.getBooks().then(books => {
             dispatcher(getBooksSuccess(books));

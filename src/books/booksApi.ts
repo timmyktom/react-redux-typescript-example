@@ -5,6 +5,7 @@ import { Book } from './bookModel';
 class BooksApi {
 
     getBooks(): Promise<Book[]> {
+        //tslint:disable
         return new Promise(function (resolve, reject) {
             ajax({
                 type: 'GET',
@@ -19,4 +20,3 @@ class BooksApi {
 }
 
 export const booksApi = new BooksApi();
-
