@@ -1,6 +1,7 @@
-import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { booksReducer } from '../books/booksReducer';
 import { carsReducer } from '../cars/carsReducer'; 
@@ -27,7 +28,7 @@ export default function configureStore(initialState?: AppState) {
   return createStore(
     rootReducer,
     initialState,
-    compose(
+    composeWithDevTools(
       applyMiddleware(thunk, reduxImmutableStateInvariant())
     )
   );
