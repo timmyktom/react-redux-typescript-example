@@ -19,6 +19,7 @@ import CarsContainer from './cars/CarsContainer';
 import './App.css';
 const logo = require('./logo.svg');
 const reduxlogo = require('./redux-logo.svg');
+const reduxobservablelogo = require('./redux-observable.gif');
 
 const store = configureStore();
 store.dispatch(getBooks());
@@ -30,10 +31,10 @@ class App extends React.Component {
       <div className="App">
         <div className="App-header">
           <div className="left">
-            <img src={logo} className="App-logo" alt="React Logo" />
+            <img src={logo} className="App-logo animated" alt="React Logo" />
             <h1>React</h1>
           </div>
-          <ul>
+          <ul className="left">
               <li className="left">
                   <Router>
                     <NavLink to="/home" replace>Home</NavLink>
@@ -51,8 +52,11 @@ class App extends React.Component {
               </li>
           </ul>
           <div className="right">
-            <img src={reduxlogo} className="App-logo" alt="Redux Logo" />
+            <img src={reduxlogo} className="App-logo animated" alt="Redux Logo" />
             <h1>Redux</h1>
+
+            <img src={reduxobservablelogo} className="App-logo" alt="Redux-Observable" />
+            <h1>Redux-Observable</h1>
           </div>
         </div>
         <div className="App-body">
