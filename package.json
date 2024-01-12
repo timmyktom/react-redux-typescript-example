@@ -9,7 +9,7 @@
     "@types/react-router": "^4.0.17",
     "@types/redux-immutable-state-invariant": "^2.0.3",
     "@types/redux-thunk": "^2.1.0",
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.1",
     "jquery": "^3.2.1",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.2",
